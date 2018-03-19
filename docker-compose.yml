@@ -1,0 +1,52 @@
+version: '2'
+services:
+  one-hour-one-life:
+    build: .
+    image: theraccoonbear/one-hour-one-life:v1
+    hostname: one-hour-one-life
+    environment:
+      - 'DBHOST=one-hour-one-life-mysql'
+      - 'DB_USER=root'
+      - 'DB_PASS=qwe123'
+      - 'DB_HOST=one-hour-one-life-mysql'
+      - 'DB_NAME=one-hour-one-life'
+      - 'APP_ENV=development'
+      - 'DATABASE_URL=mysql://root:qwe123@one-hour-one-life-mysql:3306/one-hour-one-life'
+
+    container_name: 'one-hour-one-life'
+    ports:
+      - '8005:8005'
+    volumes:
+      - '.:/opt/src'
+      #- 'one-hour-one-life-installation:/opt/src/OneHourOneLife'
+
+    networks:
+      - app
+    #links:
+      #- 'one-hour-one-life-mysql:one-hour-one-life-mysql'
+    #depends_on:
+      #- one-hour-one-life-mysql
+
+  # one-hour-one-life-mysql:
+  #   environment:
+  #     - 'MYSQL_ROOT_PASSWORD=qwe123'
+  #   ports:
+  #     - '3306:3306'
+  #   volumes:
+  #     - 'one-hour-one-life-mysql-data:/var/lib/mysql'
+  #   image: 'mariadb:latest'
+  #   container_name: 'one-hour-one-life-mysql'
+  #   hostname: 'one-hour-one-life-mysql'
+  #   networks:
+  #     - app
+
+
+#volumes:
+  #one-hour-one-life-installation:
+  #one-hour-one-life-mysql-data: 
+
+networks:
+  default:
+    driver: bridge
+  app:
+    driver: bridge

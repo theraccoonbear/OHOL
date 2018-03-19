@@ -1,0 +1,8 @@
+if [ "$1" = "hard" ]; then
+   ./utils/destroy
+else
+  ./utils/halt
+fi
+
+./utils/up
+./utils/logwatch
