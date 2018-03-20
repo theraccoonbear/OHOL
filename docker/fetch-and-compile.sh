@@ -6,7 +6,7 @@ fi
 TICKET_ID=$(cat /opt/src/ticketID.cfg)
 
 if [ ! "$TICKET_ID" ]; then
-	echo "No TICKET_ID defined in docker-compose.yml or .env"
+	echo "No TICKET_ID defined in ticketID.cfg"
 	exit 2
 fi
 
@@ -21,8 +21,8 @@ fi
 
 echo Source: $SOURCE_URL
 
-mkdir -p /opt/src/OneHourOneLife
-cd /opt/src/OneHourOneLife
+mkdir -p /opt/OneHourOneLife
+cd /opt/OneHourOneLife
 
 curl -o source.tar.gz $SOURCE_URL
 
@@ -37,3 +37,6 @@ make
 ln -s ../../OneLifeData7/objects .
 ln -s ../../OneLifeData7/transitions .
 ln -s ../../OneLifeData7/categories .
+
+sed -i 's/1/0/' settings/useStatsServer.ini
+sed -i 's/1/0/' settings/requireTicketServerCheck.ini

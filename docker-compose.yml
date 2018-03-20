@@ -16,16 +16,17 @@ services:
     container_name: 'one-hour-one-life'
     ports:
       - '8005:8005'
+
     volumes:
       - '.:/opt/src'
-      #- 'one-hour-one-life-installation:/opt/src/OneHourOneLife'
+      #- 'one-hour-one-life-installation:/opt/OneHourOneLife'
 
     networks:
       - app
-    #links:
-      #- 'one-hour-one-life-mysql:one-hour-one-life-mysql'
-    #depends_on:
-      #- one-hour-one-life-mysql
+    # links:
+    #   - 'one-hour-one-life-mysql:one-hour-one-life-mysql'
+    # depends_on:
+    #   - one-hour-one-life-mysql
 
   # one-hour-one-life-mysql:
   #   environment:
