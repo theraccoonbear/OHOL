@@ -13,7 +13,7 @@ services:
 
     volumes:
       - '.:/opt/src'
-      # - 'one-hour-one-life-installation:/opt/OneHourOneLife'
+      # - 'one-hour-one-life-installation:/opt/data'
 
     networks:
       - app

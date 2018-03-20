@@ -25,8 +25,9 @@ fi
 
 echo Source: $SOURCE_URL
 
-mkdir -p /opt/OneHourOneLife
-cd /opt/OneHourOneLife
+mkdir -p /opt/game
+#mkdir -p /opt/data
+cd /opt/game
 
 curl -o source.tar.gz $SOURCE_URL
 

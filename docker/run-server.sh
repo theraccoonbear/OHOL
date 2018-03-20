@@ -1,3 +1,4 @@
 #!/bin/bash
-cd /opt/OneHourOneLife/OneLife/server
+
+cd /opt/game/OneLife/server
 ./OneLifeServer
