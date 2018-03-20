@@ -1,13 +1,15 @@
-if [ ! -e /opt/src/ticketID.cfg ]; then
-	echo "Place your ticket ID in a ticketID.cfg at the repo root"
-	exit 1
-fi
-
-TICKET_ID=$(cat /opt/src/ticketID.cfg)
-
 if [ ! "$TICKET_ID" ]; then
-	echo "No TICKET_ID defined in ticketID.cfg"
-	exit 2
+	if [ ! -e /opt/src/ticketID.cfg ]; then
+		echo "Place your ticket ID in a ticketID.cfg at the repo root"
+		exit 1
+	fi
+
+	TICKET_ID=$(cat /opt/src/ticketID.cfg)
+
+	if [ ! "$TICKET_ID" ]; then
+		echo "No TICKET_ID defined in ticketID.cfg"
+		exit 2
+	fi
 fi
 
 echo Ticket ID: $TICKET_ID
