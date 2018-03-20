@@ -1,6 +1,6 @@
-# One Hour, One Life: Dockerized
+# One Hour One Life: Dockerized
 
-This will let you easily bring up a container running the One Hour One Life game server.
+This will let you easily bring up a container running a One Hour One Life game server.
 
 ## Setup
 
@@ -8,6 +8,14 @@ You will need to add your ticket ID you receieved when you purchased the game (i
 
 ## Build
 
-You will need Docker installed.  From the repo root run:
+You will need to Docker installed to build the image.  From the repo root run:
 
 `$ docker-compose build`
+
+## Run
+
+Once the Docker image has been built, you can bring up a container:
+
+`$ ./utils/bounce hard`
+
+This will ensure a fresh container in a clean state is brought up.
