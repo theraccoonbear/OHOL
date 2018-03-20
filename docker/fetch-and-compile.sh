@@ -1,3 +1,5 @@
+echo 'TICKET_ID in env var?' ${TICKET_ID-no}
+
 if [ ! "$TICKET_ID" ]; then
 	if [ ! -e /opt/src/ticketID.cfg ]; then
 		echo "Place your ticket ID in a ticketID.cfg at the repo root"
@@ -12,7 +14,7 @@ if [ ! "$TICKET_ID" ]; then
 	fi
 fi
 
-echo Ticket ID: $TICKET_ID
+echo TICKET_ID: $TICKET_ID
 
 SOURCE_URL=$(curl "http://onehouronelife.com/ticketServer/server.php?action=show_downloads&ticket_id=$TICKET_ID" | egrep -io 'http:[^"]+?source[^"]+?\.tar\.gz')
 
