@@ -8,5 +8,4 @@ RUN ./docker/fetch-and-compile.sh
 EXPOSE 8005
 EXPOSE 5077
 
-CMD sleep 10000
-#CMD /opt/OneHourOneLife/OneLife/server/OneLifeServer
+CMD /opt/src/docker/run-server.sh
