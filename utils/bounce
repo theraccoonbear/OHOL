@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ "$1" = "hard" ]; then
    ./utils/destroy
 else
@@ -5,4 +7,3 @@ else
 fi
 
 ./utils/up
-./utils/logwatch

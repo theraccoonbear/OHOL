@@ -2,4 +2,4 @@
 
 docker-compose -f docker-compose.yml up -d;
 
-docker logs one-hour-one-life;
+docker logs -f one-hour-one-life;

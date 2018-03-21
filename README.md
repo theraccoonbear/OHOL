@@ -20,6 +20,8 @@ Once the Docker image has been built, you can bring up a container:
 
 `$ ./utils/up`
 
+_`up` will also implicitly run the `logwatch` command_
+
 ### Stop
 
 To stop the server and preserve state:
