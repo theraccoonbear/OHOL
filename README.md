@@ -38,7 +38,7 @@ To restart a running server:
 
 `$ ./utils/bounce`
 
-To restart destrutively (remove the persisted state):
+To restart destructively (remove the persisted state):
 
 `$ ./utils/bounce hard`
 
