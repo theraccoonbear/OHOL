@@ -13,13 +13,10 @@ services:
 
     volumes:
       - '.:/opt/src'
-      # - 'one-hour-one-life-installation:/opt/data'
 
     networks:
       - app
 
-# volumes:
-#   one-hour-one-life-installation:
 
 networks:
   default:

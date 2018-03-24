@@ -1,4 +1,4 @@
-SERVER_NUMBER=$((1 + RANDOM % 9))
+SERVER_NUMBER=$((1 + RANDOM % 8))
 SOURCE_URL=http://download$SERVER_NUMBER.onehouronelife.com/downloads/OneLife_Live4_UnixSource.tar.gz
 
 rm -fR /opt/src/OneLife

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/game/OneLife/server
-./OneLifeServer
+cd /opt/src/data
+./opt/game/OneLife/server/OneLifeServer
