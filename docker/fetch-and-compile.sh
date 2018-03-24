@@ -1,32 +1,11 @@
-echo 'TICKET_ID in env var?' ${TICKET_ID-no}
+SERVER_NUMBER=$((1 + RANDOM % 9))
+SOURCE_URL=http://download$SERVER_NUMBER.onehouronelife.com/downloads/OneLife_Live4_UnixSource.tar.gz
 
-if [ ! "$TICKET_ID" ]; then
-	if [ ! -e /opt/src/ticketID.cfg ]; then
-		echo "Place your ticket ID in a ticketID.cfg at the repo root"
-		exit 1
-	fi
-
-	TICKET_ID=$(cat /opt/src/ticketID.cfg)
-
-	if [ ! "$TICKET_ID" ]; then
-		echo "No TICKET_ID defined in ticketID.cfg"
-		exit 2
-	fi
-fi
-
-echo TICKET_ID: $TICKET_ID
-
-SOURCE_URL=$(curl "http://onehouronelife.com/ticketServer/server.php?action=show_downloads&ticket_id=$TICKET_ID" | egrep -io 'http:[^"]+?source[^"]+?\.tar\.gz')
-
-if [ ! "$SOURCE_URL" ]; then
-	echo "No SOURCE_URL found.  Check that TICKET_ID is valid"
-	exit 3
-fi
+rm -fR /opt/src/OneLife
 
 echo Source: $SOURCE_URL
 
 mkdir -p /opt/game
-#mkdir -p /opt/data
 cd /opt/game
 
 curl -o source.tar.gz $SOURCE_URL
