@@ -1,3 +1,4 @@
 .env
 ticketID.cfg
+_ticketID.cfg
 *.db
