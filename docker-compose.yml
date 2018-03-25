@@ -3,8 +3,6 @@ services:
   one-hour-one-life:
     build:
       context: .
-      args:
-        TICKET_ID: ${TICKET_ID}
     image: theraccoonbear/one-hour-one-life:v1
     hostname: one-hour-one-life
     container_name: 'one-hour-one-life'

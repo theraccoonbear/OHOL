@@ -4,7 +4,7 @@ This will let you easily bring up a container running a One Hour One Life game s
 
 ## Setup for build
 
-You will need to add your ticket ID you receieved when you purchased the game (it's a long string comprised of 4 groups of 5 alpha-numeric characters) to the container configurations.  Save a file at the repo root called `ticketID.cfg` and place just your ticket ID in that file.
+Make sure you've got Docker installed.  Then clone the repo and you're ready to build the image.
 
 ## Build the image
 
